@@ -1,38 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UI.Новая_папка;
 
 namespace UI
 {
     internal class Equation
     {
-        private List<Variable> _variables=new List<Variable>();
+        private List<Variable> _variables = new();
 
         private double _rightPart;
 
         public double RightPart { get => _rightPart; set => _rightPart = value; }
         internal List<Variable> Variables { get => _variables; set => _variables = value; }
 
-        public Equation(List<Variable> variables,double rightPart)
+        public Equation(List<Variable> variables, double rightPart)
         {
             Variables = variables;
 
             RightPart = rightPart;
         }
-
-
-
         public static Equation GetEquation(string line)
         {
 
-            var lineToList = line.ToList();
+            var lineToList = line.ToLower().ToList();
 
             lineToList.RemoveAll(o => o == '+' || o == '=');
 
             int indexOfX = lineToList.IndexOf('x');
             int indexOfY = lineToList.IndexOf('y');
+            if (indexOfX == -1)
+                throw new IncorrectInputException("Отсутствует переменная X");
+            if (indexOfY == -1)
+                throw new IncorrectInputException("Отсутствует переменная Y");
+            
 
             string sX = string.Empty;
             string sY = string.Empty;
@@ -71,7 +69,6 @@ namespace UI
             var variabX = new Variable("X", double.Parse(sX));
             var variabY = new Variable("Y", double.Parse(sY));
 
-            Console.WriteLine($"X:{variabX.Coeff}\tY:{variabY.Coeff}");
             double RP = double.Parse(rightPart);
 
             return new Equation(new List<Variable>() { variabX, variabY }, RP);

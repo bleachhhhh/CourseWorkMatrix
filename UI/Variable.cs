@@ -3,7 +3,7 @@ namespace UI
 {
     internal class Variable
     {
-        private   string _name;
+        private string _name;
 
         private double _value;
 
@@ -16,7 +16,7 @@ namespace UI
         public Variable(string name, double coeff)
         {
             Name = name;
-                Coeff=coeff;
+            Coeff = coeff;
         }
     }
 }
