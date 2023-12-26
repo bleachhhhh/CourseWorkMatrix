@@ -1,6 +1,7 @@
 ﻿namespace UI
 {
-    internal class UserWorker
+
+    public class UserWorker
     {
         public static void StartWork()
         {
@@ -11,7 +12,7 @@
             {
                 Console.WriteLine("Ввод {0}-го ур.", i + 1);
                 string line = Console.ReadLine();
-                
+
                 equations[i] = Equation.GetEquation(LeadToSample(line));
 
             }
@@ -28,19 +29,19 @@
                 case "1":
                     solves = new KramerSolver().Solve(equations[0], equations[1]);
                     Console.WriteLine($"X:{solves[0]}\tY:{solves[1]}");
-                    
+
                     break;
                 case "2":
                     solves = new GaussSolver().Solve(equations[0], equations[1]);
                     Console.WriteLine($"X:{solves[0]}\tY:{solves[1]}");
-                   
+
                     break;
                 default:
                     Console.WriteLine("Выбран неверный вариант.");
                     break;
             }
         }
-        private static string LeadToSample( string line)
+        public static string LeadToSample(string line)
         {
             var lineToList = line.ToLower().ToList();
             lineToList = (from p in lineToList where (char.IsLetter(p) && (p == 'x' || p == 'y')) || (char.IsDigit(p)) || p == '-' select p).ToList();
