@@ -1,8 +1,8 @@
 ﻿
 
-namespace UI.Новая_папка
+namespace UI.Exceptions
 {
-    internal class IncorrectInputException:Exception
+    public class IncorrectInputException:Exception
     {
         public IncorrectInputException(string message) : base(message) { }
         

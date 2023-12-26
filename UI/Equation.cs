@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using UI.Новая_папка;
+﻿using UI.Exceptions;
 
 namespace UI
 {
@@ -27,9 +26,9 @@ namespace UI
            
             int indexOfX = lineToList.IndexOf('x');
             int indexOfY = lineToList.IndexOf('y');
-            if (Regex.IsMatch(line, "^[^x]+$"))
+            if (indexOfX==-1)
                 throw new IncorrectInputException("Отсутствует переменная X");
-            if (Regex.IsMatch(line, "^[^y]+$"))
+            if (indexOfY == -1)
                 throw new IncorrectInputException("Отсутствует переменная Y");
             
 
