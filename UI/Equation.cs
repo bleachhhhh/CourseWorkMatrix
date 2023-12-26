@@ -1,6 +1,6 @@
-﻿using UI.Exceptions;
+﻿using CourseWork.Exceptions;
 
-namespace UI
+namespace CourseWork
 {
     public class Equation
     {

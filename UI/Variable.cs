@@ -1,5 +1,5 @@
 ﻿
-namespace UI
+namespace CourseWork
 {
     public class Variable
     {

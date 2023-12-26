@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace UI
+namespace CourseWork
 {
     internal class Program
     {

@@ -1,4 +1,4 @@
-﻿using UI;
+﻿using CourseWork;
 namespace CourseWork.Tests
 {
     public class EquationTests
@@ -21,7 +21,7 @@ namespace CourseWork.Tests
         public void InCorrectLine_CallGetEquation_ReturnEquation_Throws(string line)
         {
             //Act+Arrange+Assert
-            Assert.Throws<UI.Exceptions.IncorrectInputException>(()=>Equation.GetEquation(line));
+            Assert.Throws<CourseWork.Exceptions.IncorrectInputException>(()=>Equation.GetEquation(line));
         }
     }
 }

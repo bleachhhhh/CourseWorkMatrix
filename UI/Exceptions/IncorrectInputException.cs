@@ -1,6 +1,6 @@
 ﻿
 
-namespace UI.Exceptions
+namespace CourseWork.Exceptions
 {
     public class IncorrectInputException:Exception
     {

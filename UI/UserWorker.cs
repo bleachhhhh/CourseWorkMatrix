@@ -1,4 +1,4 @@
-﻿namespace UI
+﻿namespace CourseWork
 {
 
     public class UserWorker

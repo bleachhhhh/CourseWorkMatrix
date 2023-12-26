@@ -1,6 +1,6 @@
-﻿namespace UI
+﻿namespace CourseWork
 {
-    internal class GaussSolver : ISolver
+    public class GaussSolver : ISolver
     {
         public double[] Solve(Equation equation1, Equation equation2)
         {

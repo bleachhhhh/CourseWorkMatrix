@@ -1,4 +1,4 @@
-﻿namespace UI
+﻿namespace CourseWork
 {
     internal interface ISolver
     {

@@ -1,5 +1,5 @@
 
-using UI;
+using CourseWork;
 
 namespace CourseWork.Tests
 {
