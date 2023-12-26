@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    internal class Variable
+    public class Variable
     {
         private string _name;
 

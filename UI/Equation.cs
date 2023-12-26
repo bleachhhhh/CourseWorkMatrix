@@ -3,14 +3,14 @@ using UI.Новая_папка;
 
 namespace UI
 {
-    internal class Equation
+    public class Equation
     {
-        private List<Variable> _variables = new();
+        private List<Variable> _variables;
 
         private double _rightPart;
 
         public double RightPart { get => _rightPart; set => _rightPart = value; }
-        internal List<Variable> Variables { get => _variables; set => _variables = value; }
+        public List<Variable> Variables { get => _variables; set => _variables = value; }
 
         public Equation(List<Variable> variables, double rightPart)
         {
