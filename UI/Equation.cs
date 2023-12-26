@@ -1,4 +1,5 @@
-﻿using UI.Новая_папка;
+﻿using System.Text.RegularExpressions;
+using UI.Новая_папка;
 
 namespace UI
 {
@@ -23,12 +24,12 @@ namespace UI
             var lineToList = line.ToLower().ToList();
 
             lineToList.RemoveAll(o => o == '+' || o == '=');
-
+           
             int indexOfX = lineToList.IndexOf('x');
             int indexOfY = lineToList.IndexOf('y');
-            if (indexOfX == -1)
+            if (Regex.IsMatch(line, "^[^x]+$"))
                 throw new IncorrectInputException("Отсутствует переменная X");
-            if (indexOfY == -1)
+            if (Regex.IsMatch(line, "^[^y]+$"))
                 throw new IncorrectInputException("Отсутствует переменная Y");
             
 
@@ -74,5 +75,6 @@ namespace UI
             return new Equation(new List<Variable>() { variabX, variabY }, RP);
 
         }
+       
     }
 }

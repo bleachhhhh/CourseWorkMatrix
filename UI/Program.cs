@@ -1,11 +1,15 @@
-﻿namespace UI
+﻿using System.Globalization;
+
+namespace UI
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             UserWorker.StartWork();
+
         }
+        
 
     }
 }

@@ -11,7 +11,8 @@
             {
                 Console.WriteLine("Ввод {0}-го ур.", i + 1);
                 string line = Console.ReadLine();
-                equations[i] = Equation.GetEquation(line);
+                
+                equations[i] = Equation.GetEquation(LeadToSample(line));
 
             }
             Console.WriteLine("Выберите метод решения\nДля выбора используйте соответствующие цифры");
@@ -38,6 +39,13 @@
                     Console.WriteLine("Выбран неверный вариант.");
                     break;
             }
+        }
+        private static string LeadToSample( string line)
+        {
+            var lineToList = line.ToLower().ToList();
+            lineToList = (from p in lineToList where (char.IsLetter(p) && (p == 'x' || p == 'y')) || (char.IsDigit(p)) || p == '-' select p).ToList();
+            var correctLine = string.Join("", lineToList);
+            return correctLine;
         }
 
     }
