@@ -1,6 +1,6 @@
 ﻿namespace CourseWork
 {
-    internal class KramerSolver : ISolver
+    public class KramerSolver : ISolver
     {
         public double[] Solve(Equation equation1, Equation equation2)
         {
